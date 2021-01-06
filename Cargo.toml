@@ -1,8 +1,8 @@
 [package]
-authors = ["Russell Hay <russell.hay@gmail.com>"]
+authors = ["{{authors}}"]
 edition = "2018"
 readme = "README.md"
-name = "firmware"
+name = "{{project-name}}"
 version = "0.1.0"
 
 [dependencies]
@@ -19,7 +19,7 @@ features = ["stm32f103", "rt", "medium"]
 
 # this lets you use `cargo fix`!
 [[bin]]
-name = "firmware"
+name = "{{project-name}}"
 test = false
 bench = false
 
