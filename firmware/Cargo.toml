@@ -1,0 +1,29 @@
+[package]
+authors = ["Russell Hay <russell.hay@gmail.com>"]
+edition = "2018"
+readme = "README.md"
+name = "firmware"
+version = "0.1.0"
+
+[dependencies]
+cortex-m = "0.6"
+cortex-m-rt = "0.6.13"
+cortex-m-semihosting = "0.3.3"
+panic-semihosting = "0.5.6"
+nb = "1"
+embedded-hal = "0.2"
+
+[dependencies.stm32f1xx-hal]
+version = "0.6.0"
+features = ["stm32f103", "rt", "medium"]
+
+# this lets you use `cargo fix`!
+[[bin]]
+name = "firmware"
+test = false
+bench = false
+
+[profile.release]
+codegen-units = 1 # better optimizations
+debug = true # symbols are nice and they don't increase the size on Flash
+lto = true # better optimizations
